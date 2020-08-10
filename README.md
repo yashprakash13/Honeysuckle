@@ -9,17 +9,18 @@
 
 
 ## Basic Usage 
-#### Link fanfiction.net and Archive of our Own links
+#### Link fanfiction.net and Archive of our Own stories
 Just mention a url in your message and the bot will automatically pull out the info about the story.
 
 #### Link a story through its name 
 * Type and send **.ff story-name**
 
-* If you get a *no results found* message, include the author name and/or fandom name along with the story name. 
+* If you get a *no results found* message, just include the author name and/or fandom name along with the story name. 
 
 #### Get the reviews from a fanfiction.net story
 Type and send **.ffrev story-name** and the bot will pull the first 10 reviews for you.
 
 If you didn't get the results you wanted, just include the author and/or fandom name along with the story name with the above command.
+
 
 
