@@ -4,8 +4,8 @@
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
 <p align="center"><img src="https://img.shields.io/badge/discord.py-built-orange"></p>
+<p align="center"><img src="https://img.shields.io/badge/python-3.6-brightgreen"></p>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
-![Python](https://img.shields.io/badge/python-v3.6+-blue.svg)
-![Discord](https://img.shields.io/badge/discord.py-built-orange)
 
 ## Basic Overview
