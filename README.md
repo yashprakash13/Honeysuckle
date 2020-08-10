@@ -3,8 +3,7 @@
 <p align="center">The ultimate discord bot for fanfictions.</p>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
-<p align="center"><img src="https://img.shields.io/badge/discord.py-built-orange"></p>
-<p align="center"><img src="https://img.shields.io/badge/python-3.6-brightgreen"></p>
+<p align="center"><img src="https://img.shields.io/badge/discord.py-built-orange"> <img src="https://img.shields.io/badge/python-3.6-brightgreen"></p>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
 
