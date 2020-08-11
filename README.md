@@ -49,4 +49,7 @@ Type and send **.ffrev story-name** and the bot will pull the first 10 reviews f
 | *.lisths* | To get the list of commands for the bot, something like this very table |
 | *.abouths* | To see the origin info about the bot |
 
+## Honeysuckle support discord server
+Do you want this bot in your server? Please do get in touch!:
+[Join Here](https://discord.gg/uNYfKEw)
 
