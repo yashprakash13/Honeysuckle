@@ -42,7 +42,7 @@ Type and send **.ff story-name** Something like this:
 <img width=63.5% src="https://github.com/yashprakash13/Honeysuckle/blob/master/screenshots/hs3.png">
 
 
-> If you get a *no results found* message, just include the author name and/or fandom name along with the story name. 
+> If you get a *no results found* message, just include the author name and/or fandom name along with the story name. If you don't get any results still, it's probably because the search engine is not indexing it higher up in its results. The bot only pulls the data from the automatic Google and Bing searches it does.
 
 ## Get the reviews from a fanfiction.net story
 1. Type and send **.ffrev story-name** and the bot will pull the first 10 reviews for you.
