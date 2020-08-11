@@ -10,7 +10,7 @@
 
 # Table of contents
 - [Basic Usage for the bot](#basic-usage)
-  * [Story linking through URLs](#link-fanfiction.net-and-archive-of-our-own-stories)
+  * [Story linking through URLs](#link-fanfictionnet-and-archive-of-our-own-stories)
   * [Story linking through names](#link-a-story-through-its-name)
   * [Getting reviews for a story on FF](#get-the-reviews-from-a-fanfiction.net-story)
 - [Helpful commands list](#helpful-commands-list)
