@@ -8,39 +8,54 @@
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
 
-## Basic Usage 
-### Link fanfiction.net and Archive of our Own stories
-Just mention a url in your message and the bot will automatically pull out the info about the story. Some like this~
+# Table of contents
+- [Basic Usage for the bot](#basic-usage)
+  * [Story linking through URLs](#link-fanfiction.net-and-archive-of-our-own-stories)
+  * [Story linking through names]()
+  * [Getting reviews for a story on FF]()
+- [Helpful commands list]()
+- [Support discord server to get in touch](#honeysuckle-support-discord-server)
+
+
+# Basic Usage 
+## Link fanfiction.net and Archive of our Own stories
+1. Just mention a url in your message and the bot will automatically pull out the info about the story. Some like this~
+
 <img width=63.5% src="https://github.com/yashprakash13/Honeysuckle/blob/master/screenshots/hs4.png">
 
 
-or like this~
+2. or like this~
 
 
 <img width=63.5% src="https://github.com/yashprakash13/Honeysuckle/blob/master/screenshots/hs6.png">
 
-### Link a story through its name 
+## Link a story through its name 
 Type and send **.ff story-name** Something like this:
+
 
 <img width=63.5% src="https://github.com/yashprakash13/Honeysuckle/blob/master/screenshots/hs2.png">
 
-and **.ao3 story-name** for this:
+
+2. and **.ao3 story-name** for this:
+
 
 <img width=63.5% src="https://github.com/yashprakash13/Honeysuckle/blob/master/screenshots/hs3.png">
 
 
 > If you get a *no results found* message, just include the author name and/or fandom name along with the story name. 
 
-### Get the reviews from a fanfiction.net story
-Type and send **.ffrev story-name** and the bot will pull the first 10 reviews for you.
+## Get the reviews from a fanfiction.net story
+1. Type and send **.ffrev story-name** and the bot will pull the first 10 reviews for you.
+
 
 <img width=63.5% src="https://github.com/yashprakash13/Honeysuckle/blob/master/screenshots/hs5.png">
+
 
 > If you don't get the results you want, just include the author and/or fandom name along with the story like in the previous example.
 
 
 ## Helpful commands list
-.ff story-name author-name-optional fandom-name-optional  
+
 | Bot Command        | What it does |   
 | ------------- |:-------------:|
 | *.ff story-name author-name-optional fandom-name-optional*       | Link FF story by name | 
@@ -48,6 +63,7 @@ Type and send **.ffrev story-name** and the bot will pull the first 10 reviews f
 | *.helphs* | To get help in using the bot | 
 | *.lisths* | To get the list of commands for the bot, something like this very table |
 | *.abouths* | To see the origin info about the bot |
+
 
 ## Honeysuckle support discord server
 Do you want this bot in your server? Please do get in touch!:
