@@ -39,6 +39,14 @@ Type and send **.ffrev story-name** and the bot will pull the first 10 reviews f
 > If you don't get the results you want, just include the author and/or fandom name along with the story like in the previous example.
 
 
-
+## Helpful commands list
+.ff story-name author-name-optional fandom-name-optional  
+| Bot Command        | What it does |   
+| ------------- |:-------------:|
+| *.ff story-name author-name-optional fandom-name-optional*       | Link FF story by name | 
+| *.ao3 story-name author-name-optional fandom-name-optional*      | Link Ao3 story by name | 
+| *.helphs* | To get help in using the bot | 
+| *.lisths* | To get the list of commands for the bot, something like this very table |
+| *.abouths* | To see the origin info about the bot |
 
 
