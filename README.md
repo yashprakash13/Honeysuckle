@@ -1,4 +1,4 @@
-<p align="center"><img width=13.5% src="https://github.com/yashprakash13/Honeysuckle/blob/master/hs_logo.png"></p>
+<p align="center"><img width=13.5% src="https://github.com/yashprakash13/Honeysuckle/blob/master/data/hs_logo.png"></p>
 <h1 align="center">Honeysuckle</h1>
 <p align="center">The ultimate discord bot for fanfictions.</p>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -21,25 +21,25 @@
 ## Link fanfiction.net and Archive of our Own stories
 1. Just mention a url in your message and the bot will automatically pull out the info about the story. Some like this~
 
-<img width=63.5% src="https://github.com/yashprakash13/Honeysuckle/blob/master/screenshots/hs4.png">
+<img width=63.5% src="https://github.com/yashprakash13/Honeysuckle/blob/master/data/screenshots/hs4.png">
 
 
 2. or like this~
 
 
-<img width=63.5% src="https://github.com/yashprakash13/Honeysuckle/blob/master/screenshots/hs6.png">
+<img width=63.5% src="https://github.com/yashprakash13/Honeysuckle/blob/master/data/screenshots/hs6.png">
 
 ## Link a story through its name 
 Type and send **.ff story-name** Something like this:
 
 
-<img width=63.5% src="https://github.com/yashprakash13/Honeysuckle/blob/master/screenshots/hs2.png">
+<img width=63.5% src="https://github.com/yashprakash13/Honeysuckle/blob/master/data/screenshots/hs2.png">
 
 
 2. and **.ao3 story-name** for this:
 
 
-<img width=63.5% src="https://github.com/yashprakash13/Honeysuckle/blob/master/screenshots/hs3.png">
+<img width=63.5% src="https://github.com/yashprakash13/Honeysuckle/blob/master/data/screenshots/hs3.png">
 
 
 > If you get a *no results found* message, just include the author name and/or fandom name along with the story name. If you don't get any results still, it's probably because the search engine is not indexing it higher up in its results. The bot only pulls the data from the automatic Google and Bing searches it does.
@@ -48,7 +48,7 @@ Type and send **.ff story-name** Something like this:
 1. Type and send **.ffrev story-name** and the bot will pull the first 10 reviews for you.
 
 
-<img width=63.5% src="https://github.com/yashprakash13/Honeysuckle/blob/master/screenshots/hs5.png">
+<img width=63.5% src="https://github.com/yashprakash13/Honeysuckle/blob/master/data/screenshots/hs5.png">
 
 
 > If you don't get the results you want, just include the author and/or fandom name along with the story like in the previous example.
