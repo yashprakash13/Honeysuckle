@@ -22,8 +22,6 @@ TOKEN = os.environ.get('DISCORD_TOKEN')
 
 bot = Bot(command_prefix='.')
 
-
-
 STATUSES = cycle(STATUS_ACTIVITY_DICT.keys())
 ACTIVITIES = cycle(STATUS_ACTIVITY_DICT.values())
 
@@ -46,4 +44,5 @@ async def loop_bot_status():
 
 
 loop_bot_status.start()
+bot.load_extension("helpercogs.help_cog")
 bot.run(TOKEN)

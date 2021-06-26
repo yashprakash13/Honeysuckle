@@ -7,3 +7,5 @@ STATUS_ACTIVITY_DICT = {
     "It's OK. You're only human, after all." : discord.ActivityType.playing
 }
 
+DOCS_URL = 'https://github.com/yashprakash13/Honeysuckle/blob/master/README.md'
+HONEYSUCKLE_SUPPORT_SERVER_URL = "https://discord.gg/B5mXWhfzg8"
