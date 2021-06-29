@@ -1,7 +1,9 @@
-from discord import Embed
-from botutils.constants import DOCS_URL, HONEYSUCKLE_SUPPORT_SERVER_URL
+from discord import Embed, Colour
+from botutils.constants import DOCS_URL, HONEYSUCKLE_SUPPORT_SERVER_URL, ALL_METADATA_KEYS
 
 def get_help_embed():
+    """to return help embed
+    """
     embed = Embed(
             title="How to Use Honeysuckle",
             description="Command to link stories from ffnet and ao3",
@@ -27,6 +29,8 @@ def get_help_embed():
     
 
 def get_about_embed():
+    """to return about embed about hs bot
+    """
     embed = Embed(
                 title="About Honeysuckle v1.1.2",
                 description="First built in March 2020 by **inPursuitOfMagic**, this bot aims to \
@@ -42,3 +46,32 @@ def get_about_embed():
     )
 
     return embed
+
+
+def get_embeds(list_of_dicts_of_metadata):
+    """
+    to get embeds list from list of dicts of story metadata
+    """
+    embeds_list = []
+    for data in list_of_dicts_of_metadata:
+        if data == "Not found.":
+            continue
+        embed = Embed(
+            title= data['title'],
+            url= data['link'],
+            description= data['summary'],
+            colour=Colour(0x272b28)
+        )
+        del data['title']
+        del data['link']
+        del data['summary']
+        for key in data:
+            embed.add_field(
+            name = key,
+            value = data[key], 
+            inline=True)
+        embeds_list.append(embed)
+    
+    return embeds_list
+
+

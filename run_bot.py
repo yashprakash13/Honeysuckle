@@ -15,6 +15,7 @@ from dotenv import load_dotenv
 from itertools import cycle
 
 from botutils.constants import *
+from brain import receiver
 
 load_dotenv()  
 
@@ -39,10 +40,40 @@ async def loop_bot_status():
             name=(next(STATUSES)).strip()
         )
     )
-
     await asyncio.sleep(13)
 
 
+
+@bot.event
+async def on_message(message):
+    """ Command to search and find the fanfiction by searching on google
+    """
+    # To run client.commands & client.event simultaneously
+    await bot.process_commands(message)
+    
+    # get the message 
+    msg = message.content.lower()
+
+    # Do not reply to self
+    if message.author == bot.user:
+        return  
+    # Do not reply to any other bot
+    if message.author.bot:
+        return 
+
+    # see if message has any links or not
+    embeds_to_send = receiver.process_message(msg)
+    if embeds_to_send:
+        async with message.channel.typing():
+            for embed in embeds_to_send:
+                try:
+                    await message.reply(embed=embed, mention_author=False)
+                except:
+                    await message.reply(embed=embed)
+    
+
+
+# run the bot
 loop_bot_status.start()
 bot.load_extension("helpercogs.help_cog")
 bot.run(TOKEN)
