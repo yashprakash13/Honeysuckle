@@ -13,7 +13,8 @@ HONEYSUCKLE_SUPPORT_SERVER_URL = "https://discord.gg/B5mXWhfzg8"
 FFN_CHECK_STR = 'fanfiction.net/s/'
 AO3_CHECK_STR = 'archiveofourown.org/works/'
 
-HS_API_URL = "http://localhost:8000/hsapi/ffn"
+HS_API_URL_FFN = "http://localhost:8000/hsapi/ffn"
+HS_API_URL_AO3 = "http://localhost:8000/hsapi/ao3"
 
 ALL_METADATA_KEYS = [
     "title",
