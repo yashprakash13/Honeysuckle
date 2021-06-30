@@ -76,4 +76,5 @@ async def on_message(message):
 # run the bot
 loop_bot_status.start()
 bot.load_extension("helpercogs.help_cog")
+bot.load_extension("helpercogs.gsearch_cog")
 bot.run(TOKEN)
