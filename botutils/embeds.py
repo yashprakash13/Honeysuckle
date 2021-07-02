@@ -11,6 +11,12 @@ def get_help_embed():
         )
 
     embed.add_field(
+        name="Simply linking of stories",
+        value="Just mention any FFN or AO3 story link in your message to get the bot's response.",
+        inline=False
+    )
+
+    embed.add_field(
         name="Ffnet links:",
         value="`.ff [fic name]` \
         \n **Example:**\n`.ff the lost horcrux`",
@@ -35,12 +41,11 @@ def get_about_embed():
                 title="About Honeysuckle v1.1.2",
                 description="First built in March 2020 by **inPursuitOfMagic**, this bot aims to \
                             faciliate easy linking of fanfiction stories in discord servers. \
-                            \n Since then, it has gotten a few redesigns and a major overhaul in August'20, Jan'21 and recently in June'21. \n\n \
-                            To read the full documentation of the bot, please visit: [Documentation.](%s)" % DOCS_URL,
+                            \n Since then, it has gotten a few redesigns and a major overhaul in August'20, Jan'21 and recently in June'21. \n\n",
                         color=0xF450AF
             )
     embed.add_field(
-        name="Join the bot support server:",
+        name="The Honeysuckle bot is now part of the HBEG fanfiction project. Join our support community here:",
         value=HONEYSUCKLE_SUPPORT_SERVER_URL,
         inline=False
     )
@@ -100,6 +105,9 @@ def get_embeds_ffn(list_of_dicts_of_metadata):
             embed.set_thumbnail(
                 url=f"https://www.fanfiction.net{data['thumb_image']}")
 
+        embed.add_field(name="\u200b", # magic of zero-width whitespace character ;)
+                value="Want to support Honeysuckle? [ Buy me a beer :beer: ](https://www.buymeacoffee.com/hbeg)",
+                inline=False)
         
         embeds_list.append(embed)
     
@@ -178,6 +186,10 @@ def get_embeds_ao3(list_of_dicts_of_metadata):
             value = stats, 
             inline=True)
 
+        embed.add_field(name="\u200b", # magic of zero-width whitespace character ;)
+                value="Want to support Honeysuckle? [ Buy me a beer :beer: ](https://www.buymeacoffee.com/hbeg)",
+                inline=False)
+                
         embeds_list.append(embed)
     
     return embeds_list

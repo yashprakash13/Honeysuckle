@@ -1,6 +1,7 @@
 import re
 import requests
 import json
+import time
 
 from botutils.constants import AO3_CHECK_STR, HS_API_URL_AO3
 from botutils.embeds import get_embeds_ao3
@@ -58,8 +59,10 @@ class Ao3Searcher:
                 response = requests.get(f'{HS_API_URL_AO3}/{story_id}')
                 data = json.loads(response.text)
                 res_metadata.append(data)
+                time.sleep(2)
             except:
                 print('Could not get metadata response for: ', story_id)
+                time.sleep(2)
         
         self.res_metadata = res_metadata
 

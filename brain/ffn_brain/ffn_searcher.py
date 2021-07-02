@@ -1,6 +1,7 @@
 import re
 import requests
 import json
+import time
 
 from botutils.constants import FFN_CHECK_STR, HS_API_URL_FFN
 from botutils.embeds import get_embeds_ffn
@@ -51,9 +52,14 @@ class FFnSearcher:
                 story_id = link[link.index('s/')+2 : link.index('/', link.index('s/')+4)]
             except:
                 story_id = link[link.index('s/')+2 :]
-            response = requests.get(f'{HS_API_URL_FFN}/{story_id}')
-            data = json.loads(response.text)
-            res_metadata.append(data)
+            try:
+                response = requests.get(f'{HS_API_URL_FFN}/{story_id}')
+                data = json.loads(response.text)
+                res_metadata.append(data)
+                time.sleep(2)
+            except:
+                print('Could not get metadata response for: ', story_id)
+                time.sleep(2)
         
         self.res_metadata = res_metadata
 

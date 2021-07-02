@@ -18,7 +18,7 @@
 
 
 # Basic Usage 
-## Link fanfiction.net and Archive of our Own stories
+## Link Fanfiction and Archive of our Own stories
 1. Just mention a url in your message and the bot will automatically pull out the info about the story. Some like this~
 
 <img width=63.5% src="https://github.com/yashprakash13/Honeysuckle/blob/master/data/screenshots/hs4.png">
@@ -42,16 +42,7 @@ Type and send **.ff story-name** Something like this:
 <img width=63.5% src="https://github.com/yashprakash13/Honeysuckle/blob/master/data/screenshots/hs3.png">
 
 
-> If you get a *no results found* message, just include the author name and/or fandom name along with the story name. If you don't get any results still, it's probably because the search engine is not indexing it higher up in its results. The bot only pulls the data from the automatic Google and Bing searches it does.
-
-## Get the reviews from a fanfiction.net story
-1. Type and send **.ffrev story-name** and the bot will pull the first 10 reviews for you.
-
-
-<img width=63.5% src="https://github.com/yashprakash13/Honeysuckle/blob/master/data/screenshots/hs5.png">
-
-
-> If you don't get the results you want, just include the author and/or fandom name along with the story like in the previous example.
+> If you don't get a reply from the bot, just include the author name and/or fandom name along with the story name. If you don't get any results still, it's probably because the search engine is not indexing it higher up in its results. The bot only pulls the data from the automatic Google and Bing searches it does.
 
 
 ## Helpful commands list
@@ -61,11 +52,10 @@ Type and send **.ff story-name** Something like this:
 | *.ff story-name author-name-optional fandom-name-optional*       | Link FF story by name | 
 | *.ao3 story-name author-name-optional fandom-name-optional*      | Link Ao3 story by name | 
 | *.helphs* | To get help in using the bot | 
-| *.lisths* | To get the list of commands for the bot, something like this very table |
 | *.abouths* | To see the origin info about the bot |
 
 
 ## Honeysuckle support discord server
 Do you want this bot in your server? Please do get in touch!:
-[Join Here](https://discord.gg/uNYfKEw)
+[Join Here](https://discord.gg/z87n86uhmy)
 
