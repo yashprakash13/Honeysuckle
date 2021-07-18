@@ -60,6 +60,10 @@ async def on_message(message):
     # Do not reply to any other bot
     if message.author.bot:
         return 
+    
+    # don't reply to a .noreply message
+    if ".noreply" in msg:
+        return
 
     # see if message has any links or not
     embeds_to_send = receiver.process_message(msg)
@@ -77,4 +81,5 @@ async def on_message(message):
 loop_bot_status.start()
 bot.load_extension("helpercogs.help_cog")
 bot.load_extension("helpercogs.gsearch_cog")
+bot.load_extension("helpercogs.admin_cog")
 bot.run(TOKEN)
