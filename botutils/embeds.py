@@ -155,30 +155,35 @@ def get_embeds_ao3(list_of_dicts_of_metadata):
             value = data['date_published'], 
             inline=True)
 
-        embed.add_field(
-            name = 'Updated',
-            value = data['date_updated'], 
-            inline=True)
+        if len(data['date_updated']) > 0:
+            embed.add_field(
+                name = 'Updated',
+                value = data['date_updated'], 
+                inline=True)
 
-        embed.add_field(
-            name = 'Characters',
-            value = data['characters'], 
-            inline=True)
+        if len(data['characters']) > 0:
+            embed.add_field(
+                name = 'Characters',
+                value = data['characters'], 
+                inline=True)
         
-        embed.add_field(
-            name = 'Categories',
-            value = data['categories'], 
-            inline=True)
+        if len(data['categories']) > 0:
+            embed.add_field(
+                name = 'Categories',
+                value = data['categories'], 
+                inline=True)
 
-        embed.add_field(
-            name = 'Relationships',
-            value = data['relationships'], 
-            inline=True)
+        if len(data['relationships']) > 0:
+            embed.add_field(
+                name = 'Relationships',
+                value = data['relationships'], 
+                inline=True)
 
-        embed.add_field(
-            name = 'Warnings',
-            value = data['warnings'], 
-            inline=True)
+        if len(data['warnings']) > 0:
+            embed.add_field(
+                name = 'Warnings',
+                value = data['warnings'], 
+                inline=True)
 
         stats = f"Kudos: {data['kudos']}, Bookmarks: {data['bookmarks']}"
         embed.add_field(
@@ -187,7 +192,7 @@ def get_embeds_ao3(list_of_dicts_of_metadata):
             inline=True)
 
         embed.add_field(name="\u200b", # magic of zero-width whitespace character ;)
-                value="Want to support Honeysuckle? [ Buy me a beer :beer: ](https://www.buymeacoffee.com/hbeg)",
+                value="Want to support Honeysuckle? [ Buy me a coffee :coffee: ](https://www.buymeacoffee.com/hbeg)",
                 inline=False)
                 
         embeds_list.append(embed)
