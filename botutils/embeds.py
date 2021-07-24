@@ -1,4 +1,4 @@
-from discord import Embed, Colour
+from discord import Embed, Colour, embeds
 from botutils.constants import DOCS_URL, HONEYSUCKLE_SUPPORT_SERVER_URL, ALL_METADATA_KEYS
 
 def get_help_embed():
@@ -200,3 +200,20 @@ def get_embeds_ao3(list_of_dicts_of_metadata):
     return embeds_list
 
 
+def get_blacklist_embed(data):
+    """to return an embed with all blacklisted fics with author, story, and votes count"""
+    embed = Embed(
+            title= "Blacklisted fics 💀",
+            # url= data['link'], TODO: ADD URL OF BLACKLIST PAGE ON HHR WEBSITE
+            description= "All blacklisted fics with vote count",
+            colour=Colour(0x272b28)
+        )
+    for website in data:
+        all_fics = data[website]
+        for fic_tuple in all_fics:
+            embed.add_field(
+                name = fic_tuple[1],
+                value = f"by {fic_tuple[0]}, with {fic_tuple[2]} votes",
+                inline=False
+            )
+    return embed

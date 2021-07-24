@@ -21,6 +21,8 @@ AO3_CHECK_STR = 'archiveofourown.org/works/'
 # HS_API_URL_AO3 = "http://localhost:8000/hsapi/ao3"
 HS_API_URL_FFN = os.environ.get("HS_API_URL_FFN")
 HS_API_URL_AO3 = os.environ.get("HS_API_URL_AO3")
+HS_API_URL_FIC_BLACKLIST = os.environ.get("HS_API_URL_FIC_BLACKLIST")
+HS_API_URL_FIC_BLACKLIST_ADD_OR_MODIFY = os.environ.get("HS_API_URL_FIC_BLACKLIST_ADD_OR_MODIFY")
 
 ALL_METADATA_KEYS = [
     "title",
