@@ -8,6 +8,7 @@ import json
 
 from botutils.searchforlinks import get_ffn_url_from_query, get_ao3_url_from_query
 from botutils.embeds import get_blacklist_embed
+from botutils.utils import get_reply_message_for_fic_blacklist
 
 class FicBlacklistCog(Cog):
     def __init__(self, bot):
@@ -33,10 +34,11 @@ class FicBlacklistCog(Cog):
         
         query = ctx.message.content
         query = query[query.index('.bladd')+6: ]
-
+        
         # extract link
         all_links = re.findall(r'(https?://[^\s]+)', query)
-        if all_links is not None:
+        if len(all_links) > 0:
+            print('Found: ', all_links)
             for link in all_links:
                 # get story_id
                 if FFN_CHECK_STR in link:
@@ -55,14 +57,26 @@ class FicBlacklistCog(Cog):
                 # send request to API for fic creation or vote modification 
                 response = requests.get(f'{HS_API_URL_FIC_BLACKLIST_ADD_OR_MODIFY}/{story_id}')
                 data = json.loads(response.text)
-                if data["resp"] == "404_WRONG_URL":
-                    await ctx.send("Can't add fic to blacklist. Not a FFN or AO3 URL.")
-                elif data["resp"] == "200_VOTE_ADDED":
-                    await ctx.send("Your vote was added.")
-                elif data["resp"] == "200_STORY_AND_VOTE_ADDED":
-                    await ctx.send("New story added to blacklist.")
+                response_to_send = get_reply_message_for_fic_blacklist(data)
+                if response:
+                    await ctx.send(response_to_send)
                 else:
                     print("Server error.", data)
+        elif query:
+            query = query.strip()
+            print('Query: ', query)
+            try:
+                story_id = int(query)
+                primary_key_id = "ID" + str(story_id)
+                # send request to API for vote addition 
+                response = requests.get(f'{HS_API_URL_FIC_BLACKLIST_ADD_OR_MODIFY}/{primary_key_id}')
+                data = json.loads(response.text)
+                response_to_send = get_reply_message_for_fic_blacklist(data)
+                if response:
+                    await ctx.send(response_to_send)
+            except Exception as e:
+                await ctx.send("The fic index is not valid.")
+                print(e)
 
 
 

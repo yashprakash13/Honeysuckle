@@ -48,6 +48,7 @@ async def loop_bot_status():
 async def on_message(message):
     """ Command to search and find the fanfiction by searching on google
     """
+    
     # To see if commnds need to be executed too
     await bot.process_commands(message)
     

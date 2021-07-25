@@ -1,6 +1,6 @@
 import discord
 import asyncio
-from discord.ext.commands import command, Cog
+from discord.ext.commands import command, Cog, is_owner, has_role, check_any
 from brain import receiver
 
 class AdminCog(Cog):
@@ -8,12 +8,13 @@ class AdminCog(Cog):
         self.bot = bot
 
 
+    @is_owner()
     @command('ping')
     async def ping(self, ctx):
         message = await ctx.send("pong")
         await message.add_reaction('👋🏼')
 
-
+    @check_any(is_owner(), has_role("Head Boy"))
     @command('noreply')
     async def about(self, ctx):
         """send a fic embed without a reply to another person's message"""
