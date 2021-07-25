@@ -1,7 +1,5 @@
 from discord import Embed, Colour, embeds
-from prettytable.prettytable import MARKDOWN
 from botutils.constants import DOCS_URL, HONEYSUCKLE_SUPPORT_SERVER_URL, ALL_METADATA_KEYS
-from prettytable import PrettyTable
 
 def get_help_embed():
     """to return help embed
