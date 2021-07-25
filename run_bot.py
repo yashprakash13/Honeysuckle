@@ -48,6 +48,7 @@ async def loop_bot_status():
 async def on_message(message):
     """ Command to search and find the fanfiction by searching on google
     """
+    
     # To see if commnds need to be executed too
     await bot.process_commands(message)
     
@@ -63,6 +64,10 @@ async def on_message(message):
     
     # don't reply to a .noreply message
     if ".noreply" in msg:
+        return
+    
+    # don't reply with fic embed to blacklist command
+    if ".bl" in msg:
         return
 
     # see if message has any links or not
@@ -82,4 +87,5 @@ loop_bot_status.start()
 bot.load_extension("helpercogs.help_cog")
 bot.load_extension("helpercogs.gsearch_cog")
 bot.load_extension("helpercogs.admin_cog")
+bot.load_extension("helpercogs.fic_blacklist")
 bot.run(TOKEN)

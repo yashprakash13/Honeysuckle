@@ -1,4 +1,4 @@
-from discord import Embed, Colour
+from discord import Embed, Colour, embeds
 from botutils.constants import DOCS_URL, HONEYSUCKLE_SUPPORT_SERVER_URL, ALL_METADATA_KEYS
 
 def get_help_embed():
@@ -7,7 +7,7 @@ def get_help_embed():
     embed = Embed(
             title="How to Use Honeysuckle",
             description="Command to link stories from ffnet and ao3",
-            color=0xF1948A
+            color=0xDB6F77
         )
 
     embed.add_field(
@@ -42,7 +42,7 @@ def get_about_embed():
                 description="First built in March 2020 by **inPursuitOfMagic**, this bot aims to \
                             faciliate easy linking of fanfiction stories in discord servers. \
                             \n Since then, it has gotten a few redesigns and a major overhaul in August'20, Jan'21 and recently in June'21. \n\n",
-                        color=0xF450AF
+                        color=0xDB6F77
             )
     embed.add_field(
         name="The Honeysuckle bot is now part of the HBEG fanfiction project. Join our support community here:",
@@ -65,7 +65,7 @@ def get_embeds_ffn(list_of_dicts_of_metadata):
             title= data['title'],
             url= data['link'],
             description= data['summary'],
-            colour=Colour(0x272b28)
+            colour=Colour(0xDB6F77)
         )
         embed.set_author(name=data['author_name'])
 
@@ -125,7 +125,7 @@ def get_embeds_ao3(list_of_dicts_of_metadata):
             title= data['title'],
             url= data['link'],
             description= data['summary'],
-            colour=Colour(0x272b28)
+            colour=Colour(0xDB6F77)
         )
         embed.set_author(name=data['authors'])
 
@@ -200,3 +200,22 @@ def get_embeds_ao3(list_of_dicts_of_metadata):
     return embeds_list
 
 
+def get_blacklist_embed(data):
+    """to return an embed with all blacklisted fics with author, story, and votes count"""
+    
+    embed = Embed(
+            title= "Blacklisted fics 💀",
+            # url= data['link'], TODO: ADD URL OF BLACKLIST PAGE ON HHR WEBSITE
+            description= "All blacklisted fics with vote count",
+            colour=Colour(0xDB6F77)
+        )
+    for website in data:
+        all_fics = data[website]
+        for fic_tuple in all_fics:
+            embed.add_field(
+                name= f"{fic_tuple[0]}. {fic_tuple[2]} by {fic_tuple[1]} with {fic_tuple[3]} votes.",
+                value="\u200b",
+                inline=False
+            )
+    
+    return embed
