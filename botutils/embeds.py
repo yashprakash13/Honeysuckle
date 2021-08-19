@@ -1,3 +1,4 @@
+from os import link
 from discord import Embed, Colour, embeds
 from botutils.constants import DOCS_URL, HONEYSUCKLE_SUPPORT_SERVER_URL, ALL_METADATA_KEYS
 
@@ -106,7 +107,7 @@ def get_embeds_ffn(list_of_dicts_of_metadata):
                 url=f"https://www.fanfiction.net{data['thumb_image']}")
 
         embed.add_field(name="\u200b", # magic of zero-width whitespace character ;)
-                value="Want to support Honeysuckle? [ Buy me a beer :beer: ](https://www.buymeacoffee.com/hbeg)",
+                value="Want to support Honeysuckle? [ Buy me a coffee :coffee: ](https://www.buymeacoffee.com/hbeg)",
                 inline=False)
         
         embeds_list.append(embed)
@@ -219,3 +220,44 @@ def get_blacklist_embed(data):
             )
     
     return embed
+
+
+def get_ffn_story_link_from_id(story_id):
+    return f"https://fanfiction.net/s/{story_id}"
+
+
+# AU Profile Embed Maker class
+
+class FFNAUProfileEmbedMaker:
+    def __init__(self, au_link, au_name, au_intro_line, au_names_ids_tuple, au_story_details) -> None:
+        self.au_name = au_name
+        self.au_link = au_link
+        self.au_intro_line = au_intro_line
+        self.au_names_ids_tuple = au_names_ids_tuple
+        self.au_story_details = au_story_details
+
+        self.page_limit = len(self.au_names_ids_tuple) // 5
+    
+    def get_page_limit(self):
+        return self.page_limit
+
+    def get_embed_page(self, page=1):
+        """to return author profile embeds"""
+
+        embed = Embed(
+                title= f"Name: {self.au_name}",
+                url= self.au_link,
+                description= self.au_intro_line,
+                colour=Colour(0xDB6F77)
+            )
+        start_story = (page-1) * 5
+        for storynameid, storydetails in zip(self.au_names_ids_tuple[start_story:start_story+5], self.au_story_details[start_story:start_story+5]):
+            link = get_ffn_story_link_from_id(storynameid[1])
+            embed.add_field(
+                    name= storynameid[0],
+                    value= f"{storydetails}, [Link]({link})",
+                    inline=False
+            )   
+        embed.set_footer(text=f"Page: {page}/{self.page_limit}") 
+
+        return embed
