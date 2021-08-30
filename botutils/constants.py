@@ -17,6 +17,7 @@ HONEYSUCKLE_SUPPORT_SERVER_URL = "https://discord.gg/z87n86uhmy"
 FFN_CHECK_STR = 'fanfiction.net/s/'
 AO3_CHECK_STR = 'archiveofourown.org/works/'
 FFN_AUTHOR_CHECK_STR = "fanfiction.net/u/"
+PORTKEY_CHECK_STR = "portkey-archive.org/story/"
 
 # HS_API_URL_FFN = "http://localhost:8000/hsapi/ffn"
 # HS_API_URL_AO3 = "http://localhost:8000/hsapi/ao3"
@@ -25,6 +26,7 @@ HS_API_URL_AO3 = os.environ.get("HS_API_URL_AO3")
 HS_API_URL_FIC_BLACKLIST = os.environ.get("HS_API_URL_FIC_BLACKLIST")
 HS_API_URL_FIC_BLACKLIST_ADD_OR_MODIFY = os.environ.get("HS_API_URL_FIC_BLACKLIST_ADD_OR_MODIFY")
 HS_API_AU_FFN_URL = os.environ.get("HS_API_AU_FFN_URL")
+PORTKEY_API_STORY = "https://www.portkey-archive.org/api/v1/story/" # /<story_id>/meta
 
 ALL_METADATA_KEYS = [
     "title",

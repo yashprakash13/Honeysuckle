@@ -201,6 +201,51 @@ def get_embeds_ao3(list_of_dicts_of_metadata):
     return embeds_list
 
 
+def get_embeds_portkey(list_of_dicts_of_metadata):
+    """make and return portkey archive embeds for story metadata"""
+
+    embeds_list = []
+    for data in list_of_dicts_of_metadata:
+        data = data["story"]
+        sid = data["id"]
+        embed = Embed(
+            title= data['title'],
+            url= f"https://www.portkey-archive.org/story/{sid}",
+            description= data['summary'],
+            colour=Colour(0xDB6F77)
+        )
+        embed.set_author(name=data['author']["name"])
+
+        embed.add_field(
+            name='Length',
+            value=str(data['chapter_count']) +
+            " chapter(s) with "+str(data['word_count'])+" words", 
+            inline=True)
+
+        embed.add_field(
+            name = 'Status',
+            value = data['status'], 
+            inline=True)
+        
+        embed.add_field(
+            name = 'Genres',
+            value = ", ".join(data["genres"]), 
+            inline=True)
+        
+        embed.add_field(
+            name = 'Rating',
+            value = data["rating"], 
+            inline=True)
+
+        embeds_list.append(embed)
+        
+    return embeds_list
+
+        
+        
+
+
+
 def get_blacklist_embed(data):
     """to return an embed with all blacklisted fics with author, story, and votes count"""
     
