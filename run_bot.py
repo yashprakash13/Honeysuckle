@@ -21,7 +21,7 @@ load_dotenv()
 
 TOKEN = os.environ.get('DISCORD_TOKEN')
 
-bot = Bot(command_prefix='.')
+bot = Bot(command_prefix='.', help_command=None)
 
 STATUSES = cycle(STATUS_ACTIVITY_DICT.keys())
 ACTIVITIES = cycle(STATUS_ACTIVITY_DICT.values())
