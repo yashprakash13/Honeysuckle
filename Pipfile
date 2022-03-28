@@ -10,6 +10,8 @@ cloudscraper = "*"
 requests = "*"
 python-dotenv = "*"
 python-dateutil = "*"
+fastapi = "*"
+uvicorn = {extras = ["standard"], version = "*"}
 
 [dev-packages]
 

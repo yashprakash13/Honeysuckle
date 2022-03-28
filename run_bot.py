@@ -81,6 +81,26 @@ async def on_message(message):
                     await message.reply(embed=embed)
     
 
+from threading import Thread
+
+import uvicorn
+from fastapi import FastAPI 
+
+app = FastAPI()
+
+@app.get("/")
+def main():
+    return "The bot is alive!"
+
+def run():
+    uvicorn.run(app, host="0.0.0.0", port=8443) # port number taken from server 
+
+def run_bot():
+    t = Thread(target=run)
+    t.start()
+
+
+run_bot()
 
 # run the bot
 loop_bot_status.start()
