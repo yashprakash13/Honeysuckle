@@ -42,8 +42,15 @@ class AO3AuProfiler:
             au_id = link[link.index('users/')+6 : link.rindex('/works')]
         except:
             au_id = link[link.index('users/')+6 : ]
-        if au_id.endswith("/"):
-            au_id = au_id[:-1]
+        if not au_id:
+            try:
+                au_id = link[link.index('users/')+6 : link.rindex('/pseuds')]
+            except:
+                au_id = link[link.index('users/')+6 : ]
+        
+        if "/" in au_id:
+            au_id = au_id[:au_id.index("/")]
+        print(au_id)
         response = requests.get(f"{HS_API_AU_AO3_URL}{au_id}")
         response = json.loads(response.text)
         
