@@ -306,3 +306,21 @@ class FFNAUProfileEmbedMaker:
         embed.set_footer(text=f"Page: {page}/{self.page_limit}") 
 
         return embed
+
+def AO3AUProfileEmbedMaker(au_link_ao3, au_name_ao3, au_intro_line_ao3, au_story_details_ao3):
+    """genereate embedds for author profile data from AO3"""
+
+    embed = Embed(
+            title= f"Name: {au_name_ao3}",
+            url= au_link_ao3,
+            description= au_intro_line_ao3,
+            colour=Colour(0xDB6F77)
+        )
+    for work in au_story_details_ao3:
+        embed.add_field(
+            name = f"{work['title']} in {work['fandoms']} with {work['words']} words",
+            value = work["summary"],
+            inline = False
+        )
+    
+    return embed

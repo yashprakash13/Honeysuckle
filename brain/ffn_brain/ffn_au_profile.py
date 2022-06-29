@@ -22,14 +22,17 @@ class FFNAuProfiler:
 
     def _fetch_au_link_from_message(self):
         """extract author profile ffn link from message text"""
-
-        all_links = re.findall(r'(https?://[^\s]+)', self.message)
-        all_links_to_get_profiles_for = []
-        for link in all_links:
-            if FFN_AUTHOR_CHECK_STR in link:
-                all_links_to_get_profiles_for.append(link)
-                break # get only the first profile link
-        self.au_link = all_links_to_get_profiles_for[0]
+        try:
+            all_links = re.findall(r'(https?://[^\s]+)', self.message)
+            all_links_to_get_profiles_for = []
+            for link in all_links:
+                if FFN_AUTHOR_CHECK_STR in link:
+                    all_links_to_get_profiles_for.append(link)
+                    break # get only the first profile link
+        
+            self.au_link = all_links_to_get_profiles_for[0]
+        except:
+            print("No ffn au link found.")
 
     def _crawl_au_profile_ffn(self):
         """to crawl au profile link fetched"""
