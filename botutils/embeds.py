@@ -31,6 +31,14 @@ def get_help_embed():
         inline=False
     )
 
+    embed.add_field(
+        name="FFN or AO3 author profile links:",
+        value="`.au [author profile link]` \
+        \n **Like:**\n`.au https://archiveofourown.org/users/GraeFoxx/pseuds/GraeFoxx`",
+        inline=False
+    )
+
+
     return embed
 
     
