@@ -92,21 +92,18 @@ app = FastAPI()
 def main():
     return "The bot is alive!"
 
-def run():
-    uvicorn.run(app, host="0.0.0.0", port=8443) # port number taken from server 
+# run the bot as a FastAPI async func
+@app.on_event("startup")
+async def run():
+    """to run the bot as a FastAPI async func"""
 
-def run_bot():
-    t = Thread(target=run)
-    t.start()
-
-
-run_bot()
-
-# run the bot
-loop_bot_status.start()
-bot.load_extension("helpercogs.help_cog")
-bot.load_extension("helpercogs.gsearch_cog")
-bot.load_extension("helpercogs.admin_cog")
-bot.load_extension("helpercogs.fic_blacklist")
-bot.load_extension("helpercogs.ffn_au_profile_cog")
-bot.run(TOKEN)
+    try:
+        loop_bot_status.start()
+        bot.load_extension("helpercogs.help_cog")
+        bot.load_extension("helpercogs.gsearch_cog")
+        bot.load_extension("helpercogs.admin_cog")
+        bot.load_extension("helpercogs.fic_blacklist")
+        bot.load_extension("helpercogs.ffn_au_profile_cog")
+        asyncio.create_task(bot.start(TOKEN))
+    except:
+        await bot.logout()
