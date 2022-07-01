@@ -83,10 +83,11 @@ async def on_message(message):
     
 @bot.event
 async def on_member_join(member):
-    channel = bot.get_channel(685382876442656961) # entrance-hall channel
-    embed=discord.Embed(title=f"Welcome {member.name}!", description=f"Welcome to your first term at {member.guild.name}! We are glad to have you with us! 😀 \n\n 1. By joining us, you are agreeing with the Discord Age requirement (16+) to participate in all tasks of the server. If you are not of age, please enter once you are. \n\n 2. You cannot see everything, but that is because several rooms (channels) will only open themselves to you once you partake in the Sorting Ceremony (selecting a House and claiming your roles) in <#685387513937920020>. This is necessary to do in order to see restricted channels such as the HHr+ channels. \n\n 3. Mr. Filch has let out a list of what is allowed and forbidden in <#685382701729054916>  (the rules of the server). \n\n 4. If you are struggling to navigate in the server, you must solemnly swear that you are up to no good and open <#894947843465420810> . \n\n 5. Most importantly, we wish you a good term and do not forget to have fun, <#685366333319151649>  is a good place to start this task. \n\n Start chatting with the fam in the <#685366333319151649> !") # F-Strings!
-    embed.set_thumbnail(url=member.avatar_url) # Set the embed's thumbnail to the member's avatar image!
-    await channel.send(embed=embed)
+    if member.guild.id == 685366333319151636:
+        channel = bot.get_channel(685382876442656961) # entrance-hall channel
+        embed=discord.Embed(title=f"Welcome {member.name}!", description=f"Welcome to your first term at {member.guild.name}! We are glad to have you with us! 😀 \n\n 1. By joining us, you are agreeing with the Discord Age requirement (16+) to participate in all tasks of the server. If you are not of age, please enter once you are. \n\n 2. You cannot see everything, but that is because several rooms (channels) will only open themselves to you once you partake in the Sorting Ceremony (selecting a House and claiming your roles) in <#685387513937920020>. This is necessary to do in order to see restricted channels such as the HHr+ channels. \n\n 3. Mr. Filch has let out a list of what is allowed and forbidden in <#685382701729054916>  (the rules of the server). \n\n 4. If you are struggling to navigate in the server, you must solemnly swear that you are up to no good and open <#894947843465420810> . \n\n 5. Most importantly, we wish you a good term and do not forget to have fun, <#685366333319151649>  is a good place to start this task. \n\n Start chatting with the fam in the <#685366333319151649> !") # F-Strings!
+        embed.set_thumbnail(url=member.avatar_url) # Set the embed's thumbnail to the member's avatar image!
+        await channel.send(embed=embed)
 
 
 
