@@ -113,10 +113,6 @@ def get_embeds_ffn(list_of_dicts_of_metadata):
         if data['thumb_image']:
             embed.set_thumbnail(
                 url=f"https://www.fanfiction.net{data['thumb_image']}")
-
-        embed.add_field(name="\u200b", # magic of zero-width whitespace character ;)
-                value="Want to support Honeysuckle? [ Buy me a coffee :coffee: ](https://www.buymeacoffee.com/hbeg)",
-                inline=False)
         
         embeds_list.append(embed)
     
@@ -199,10 +195,6 @@ def get_embeds_ao3(list_of_dicts_of_metadata):
             name = 'Stats',
             value = stats, 
             inline=True)
-
-        embed.add_field(name="\u200b", # magic of zero-width whitespace character ;)
-                value="Want to support Honeysuckle? [ Buy me a coffee :coffee: ](https://www.buymeacoffee.com/hbeg)",
-                inline=False)
                 
         embeds_list.append(embed)
     
