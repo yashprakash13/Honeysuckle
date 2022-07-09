@@ -11,7 +11,7 @@ class HelpCog(Cog):
         self.bot = bot
 
 
-    @command('helphs')
+    @command('help')
     async def help(self, ctx):
         async with ctx.typing():
             await asyncio.sleep(1)
@@ -20,7 +20,7 @@ class HelpCog(Cog):
         await message.add_reaction('ℹ')
 
 
-    @command('abouths')
+    @command('about')
     async def about(self, ctx):
         async with ctx.typing():
             await asyncio.sleep(1)

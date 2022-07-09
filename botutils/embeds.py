@@ -6,33 +6,33 @@ def get_help_embed():
     """to return help embed
     """
     embed = Embed(
-            title="How to Use Honeysuckle",
-            description="Command to link stories from ffnet and ao3",
+            title="How to use the Padfoot bot",
+            description="v1.1.3",
             color=0xDB6F77
         )
 
     embed.add_field(
-        name="Simply linking of stories",
+        name="Simple linking of stories",
         value="Just mention any FFN or AO3 story link in your message to get the bot's response.",
         inline=False
     )
 
     embed.add_field(
-        name="Ffnet links:",
+        name="Ffnet fics can be posted without their URLs via:",
         value="`.ff [fic name]` \
         \n **Example:**\n`.ff the lost horcrux`",
         inline=False
     )
     
     embed.add_field(
-        name="AO3 links:",
+        name="AO3 fics can be posted without their URLs via:",
         value="`.ao3 [fic name]` \
         \n **Like:**\n`.ao3 from ruin`",
         inline=False
     )
 
     embed.add_field(
-        name="FFN or AO3 author profile links:",
+        name="FFN or AO3 author profiles can be displayed via:",
         value="`.au [author profile link]` \
         \n **Like:**\n`.au https://archiveofourown.org/users/GraeFoxx/pseuds/GraeFoxx`",
         inline=False
@@ -47,16 +47,9 @@ def get_about_embed():
     """to return about embed about hs bot from ffn
     """
     embed = Embed(
-                title="About Honeysuckle v1.1.2",
-                description="First built in March 2020 by **inPursuitOfMagic**, this bot aims to \
-                            faciliate easy linking of fanfiction stories in discord servers. \
-                            \n Since then, it has gotten a few redesigns and a major overhaul in August'20, Jan'21 and recently in June'21. \n\n",
+                title="About Padfoot bot v1.1.3",
+                description="Built by **inPursuitOfMagic** for the Happy Harmony Homestead discord server and beyond.",
                         color=0xDB6F77
-            )
-    embed.add_field(
-        name="The Honeysuckle bot is now part of the HBEG fanfiction project. Join our support community here:",
-        value=HONEYSUCKLE_SUPPORT_SERVER_URL,
-        inline=False
     )
 
     return embed
