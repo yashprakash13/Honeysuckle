@@ -255,14 +255,12 @@ def get_blacklist_embed(data):
             description= "All blacklisted fics with vote count",
             colour=Colour(0xDB6F77)
         )
-    for website in data:
-        all_fics = data[website]
-        for fic_tuple in all_fics:
-            embed.add_field(
-                name= f"{fic_tuple[0]}. {fic_tuple[2]} by {fic_tuple[1]} with {fic_tuple[3]} votes.",
-                value="\u200b",
-                inline=False
-            )
+    for i, ficdict in enumerate(data):
+        embed.add_field(
+            name= f'Rank {i+1}: {ficdict["story_name"]} by {ficdict["author_name"]} with {ficdict["votes"]} votes.',
+            value="\u200b",
+            inline=False
+        )
     
     return embed
 

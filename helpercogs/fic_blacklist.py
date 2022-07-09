@@ -19,13 +19,15 @@ class FicBlacklistCog(Cog):
     async def blacklist_get(self, ctx):
         async with ctx.typing():
             await asyncio.sleep(1)
+        try:
+            response = requests.get(f'{HS_API_URL_FIC_BLACKLIST}')
+            data = json.loads(response.text)
 
-        response = requests.get(f'{HS_API_URL_FIC_BLACKLIST}')
-        data = json.loads(response.text)
-
-        embed_to_send = get_blacklist_embed(data)
-        await ctx.send(embed=embed_to_send)
-    
+            embed_to_send = get_blacklist_embed(data)
+            await ctx.send(embed=embed_to_send)
+        except Exception as e:
+            print(f"Exception occured: {e}")
+            print(response.text)
 
     @command('bladd')
     async def blacklist_add(self, ctx):
